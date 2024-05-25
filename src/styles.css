@@ -35,3 +35,54 @@ body {
   border-color: #defcf9;
   color: #defcf9;
 }
+
+header {
+  border-bottom: 1px solid #f4eeff;
+  padding: 0 0 30px 0;
+}
+main {
+  padding: 30px 0 30px 0;
+}
+footer {
+  border-top: 1px solid #f4eeff;
+  padding: 30px 0 0 0;
+}
+.wheater-app-data {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+.wheater-app-temperature-container {
+  display: flex;
+  justify-content: space-between;
+}
+.wheater-app-city {
+  margin: 0;
+  font-size: 45px;
+
+  line-height: 65px;
+}
+.wheater-app-details {
+  margin: 0;
+  font-size: 14px;
+  color: #9ba6a5;
+}
+.wheater-app-details strong {
+  color: #118a7e;
+}
+.wheater-app-icon {
+  font-size: 68px;
+}
+.wheater-app-unit {
+  padding-top: 24px;
+
+  font-size: 20px;
+  font-weight: 400;
+  display: absolute;
+  top: 13px;
+}
+.wheater-app-temperture-value {
+  font-size: 68px;
+  font-weight: 450;
+  padding-top: -15px;
+}
