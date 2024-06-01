@@ -3,8 +3,37 @@ function refreshWheater(response) {
   let actualTemperature = response.data.temperature.current;
   let newCity = document.querySelector("#wheater-app-city");
   newCity.innerHTML = response.data.city;
+  let desciptionElement = document.querySelector("#desciption");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
+  let time = new Date(response.data.time * 1000);
 
+  dateElement.innerHTML = formatDate(time);
+  windElement.innerHTML = `${response.data.wind.speed}km/h`;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  desciptionElement.innerHTML = response.data.condition.description;
   temperature.innerHTML = Math.round(actualTemperature);
+  console.log(response.data);
+}
+
+function formatDate(time) {
+  let minutes = time.getMinutes();
+  let hours = time.getHours();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[time.getDay()];
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${day} ${hours}:${minutes}`;
 }
 
 function searchCity(city) {
