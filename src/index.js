@@ -8,7 +8,9 @@ function refreshWheater(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let time = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#wheater-app-icon");
 
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="wheater-app-icon"/>`;
   dateElement.innerHTML = formatDate(time);
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
