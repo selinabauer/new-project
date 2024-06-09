@@ -86,3 +86,23 @@ footer {
   font-weight: 450;
   padding-top: -15px;
 }
+
+.weather-forecast {
+  color: #606470;
+}
+.weather-forecast-day {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.weather-forecast-icon {
+  display: block;
+  margin: 0 auto;
+}
+.weather-forecast-temperatures {
+  text-align: center;
+
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
