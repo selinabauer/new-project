@@ -17,6 +17,7 @@ function refreshWheater(response) {
   desciptionElement.innerHTML = response.data.condition.description;
   temperature.innerHTML = Math.round(actualTemperature);
   console.log(response.data);
+  getForecast(response.data.city);
 }
 
 function formatDate(time) {
@@ -55,7 +56,14 @@ let inputValue = document.querySelector("#search-form");
 inputValue.addEventListener("submit", callInputValue);
 searchCity("Bern");
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "f4t0o3b00c8eabf0c1910e4852f5c3b5";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#weather-forecast");
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHTML = "";
@@ -81,5 +89,3 @@ function displayForecast() {
   });
   forecastElement.innerHTML = forecastHTML;
 }
-
-displayForecast();
